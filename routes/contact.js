@@ -7,18 +7,16 @@ let contact = require("../models/contact");
 
 /*GET   Contact list page - READ Operation */
 router.get("/", (req, res, next) => {
-  contact.find((err, contactlist) => {
+  contact.find((err, contactList) => {
     if (err) {
       return colsole.error(err);
     } else {
-      console.log(contactlist);
+      console.log(contactList);
 
-      /* 
-      res.render('contacts/index',{
-          title: 'contact list',
-          contactlist: contact list
+      res.render("contacts/index", {
+        title: "Contact List",
+        contactList: contactList
       });
-      */
     }
   });
 });
